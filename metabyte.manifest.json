@@ -1,0 +1,42 @@
+{
+  "spec": "SPEC-TRANSITCLOUD-METABYTE-V1",
+  "protocol": "DOC.USD / TransitCloud",
+  "version": "1.0.0",
+  "package_id": "MBYTE-20260224-00001",
+  "created_utc": "2026-02-24T22:10:00Z",
+
+  "document": {
+    "type": "DOC.USD",
+    "title": "Invoice 001",
+    "mime": "application/json",
+    "sha256": "HEX_SHA256_DIGEST"
+  },
+
+  "content_address": {
+    "ipfs_cid": "Qm...",
+    "gateway_url": "https://ipfs.io/ipfs/Qm..."
+  },
+
+  "signature": {
+    "algorithm": "Ed25519",
+    "public_key": "BASE64_PUBLIC_KEY",
+    "signature": "BASE64_SIGNATURE"
+  },
+
+  "headers": {
+    "X-DOC-SHA256": "HEX_SHA256_DIGEST",
+    "X-DOC-CID": "Qm...",
+    "X-DOC-SIG": "BASE64_SIGNATURE"
+  },
+
+  "onchain_anchor": {
+    "network": "Base",
+    "txid": null,
+    "anchor_hash": "ROOT_OR_MMR_HASH"
+  },
+
+  "verification": {
+    "status": "VERIFIABLE",
+    "reproducible": true
+  }
+}
