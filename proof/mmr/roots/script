@@ -1,0 +1,28 @@
+import fs from "fs";
+import crypto from "crypto";
+
+function sha256hex(s) {
+  return "0x" + crypto.createHash("sha256").update(s).digest("hex");
+}
+
+const manifestPath = process.argv[2];
+if (!manifestPath) {
+  console.error("Usage: node scripts/mmr_append_leaf.js spec/metabyte.manifest.json");
+  process.exit(1);
+}
+
+const m = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+const packageId = m.package_id;
+const docSha = m.document?.sha256 || "";
+const cid = m.content_address?.ipfs_cid || "";
+const t = m.created_utc || new Date().toISOString();
+
+const leaf = sha256hex(`METABYTE|${packageId}|${docSha}|${cid}`);
+
+fs.mkdirSync("proof/mmr", { recursive: true });
+fs.appendFileSync(
+  "proof/mmr/leaves.jsonl",
+  JSON.stringify({ t, package_id: packageId, leaf }) + "\n"
+);
+
+console.log("Appended leaf:", leaf);
