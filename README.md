@@ -1,26 +1,52 @@
-# DocumentCurrency — Enterprise Licensing Site (GitHub Pages)
+# DocumentCurrency (DOC.USD)
+## Verifiable Document Currency Infrastructure
+### Powered by TransitCloud
 
-Deploy-ready static bundle for DocumentCurrency enterprise licensing.
+**Author of Record:** Kam Swygert  
+**Protocol Version:** v1.0.0  
+**Network Anchor:** Base (On-chain ready)
 
-## Contents
-- index.html (home)
-- developers.html
-- enterprise.html (includes static license verify UI)
-- terms.html
-- registry.html (placeholder)
-- verification.html (placeholder)
-- assets/styles.css
-- assets/app.js
+---
 
-## Deploy to GitHub Pages
-1) Upload all files to the repo root exactly as-is.
-2) GitHub → Repo Settings → Pages
-   - Source: Deploy from a branch
-   - Branch: main
-   - Folder: / (root)
+## Overview
 
-## Replace placeholders
-- Rename your existing files:
-  - Registry.html → registry.html
-  - Verification.html → verification.html
-- Then overwrite the placeholder registry.html / verification.html in this bundle with your real pages.
+DocumentCurrency (DOC.USD) is a cryptographically verifiable document infrastructure that converts financial records into **tamper-evident, independently verifiable instruments**.
+
+It transforms invoices, receipts, and financial reports into **content-addressed, signed, and auditable records** that can be verified without relying on centralized databases.
+
+This system enables:
+
+- Deterministic SHA-256 hashing  
+- IPFS content addressing (CID)  
+- Ed25519 digital signatures  
+- Public registry verification  
+- On-chain anchoring (Base network)  
+
+---
+
+## Core Architecture
+
+### DOC.USD
+Financial document instrument layer
+
+### MetaByte
+Cryptographic packaging layer  
+Produces deterministic, verifiable package manifests
+
+### MetaFiche
+Grid-indexed sheet format  
+Organizes MetaByte packages into indexed, auditable layouts
+
+### TransitCloud
+Transport + custody + registry infrastructure
+
+### Public Registry
+Maps:
+- document name
+- CID pointer
+- pointer hash
+- verification status
+
+---
+
+## System Stack
