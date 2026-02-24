@@ -1,1 +1,72 @@
-
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "TransitCloud API",
+    "version": "1.0.0",
+    "description": "TransitCloud API blueprint for canonicalization, hashing, signing, proof bundles, verification, optional onchain anchoring, and optional registry operations."
+  },
+  "servers": [
+    { "url": "http://localhost:8787", "description": "Local dev" },
+    { "url": "https://api.documentcurrency.com", "description": "Production (placeholder)" }
+  ],
+  "paths": {
+    "/v1/canonize": {
+      "post": {
+        "summary": "Canonicalize a document",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object" } } } },
+        "responses": { "200": { "description": "Canonical bytes", "content": { "application/json": { "schema": { "type": "object" } } } } }
+      }
+    },
+    "/v1/hash": {
+      "post": {
+        "summary": "Hash canonical bytes (SHA-256)",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object" } } } },
+        "responses": { "200": { "description": "Root hash", "content": { "application/json": { "schema": { "type": "object" } } } } }
+      }
+    },
+    "/v1/sign": {
+      "post": {
+        "summary": "Sign canonical bytes (Ed25519)",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object" } } } },
+        "responses": { "200": { "description": "Signature", "content": { "application/json": { "schema": { "type": "object" } } } } }
+      }
+    },
+    "/v1/bundle": {
+      "post": {
+        "summary": "Create a proof bundle",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object" } } } },
+        "responses": { "200": { "description": "Bundle", "content": { "application/json": { "schema": { "type": "object" } } } } }
+      }
+    },
+    "/v1/verify": {
+      "post": {
+        "summary": "Verify a proof bundle",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object" } } } },
+        "responses": { "200": { "description": "Verification report", "content": { "application/json": { "schema": { "type": "object" } } } } }
+      }
+    },
+    "/v1/anchor": {
+      "post": {
+        "summary": "Anchor a root hash onchain (optional)",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object" } } } },
+        "responses": { "200": { "description": "Anchor result", "content": { "application/json": { "schema": { "type": "object" } } } } }
+      }
+    },
+    "/v1/registry/ingest": {
+      "post": {
+        "summary": "Ingest a root into the registry (optional)",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object" } } } },
+        "responses": { "200": { "description": "Registry record created", "content": { "application/json": { "schema": { "type": "object" } } } } }
+      }
+    },
+    "/v1/registry/roots/{root_hex}": {
+      "get": {
+        "summary": "Fetch registry record for a root hash (optional)",
+        "parameters": [
+          { "name": "root_hex", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "Registry record", "content": { "application/json": { "schema": { "type": "object" } } } } }
+      }
+    }
+  }
+}
