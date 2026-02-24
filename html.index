@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DocumentCurrency | DOC.USD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html">
+          <div class="brand-badge"></div>
+          <div>
+            <div class="brand-title">DocumentCurrency</div>
+            <span class="brand-sub">DOC.USD • Verifiable Financial Documents</span>
+          </div>
+        </a>
+        <div class="links">
+          <a href="protocol.html">Protocol</a>
+          <a href="transitcloud.html">TransitCloud</a>
+          <a href="registry.html">Registry</a>
+          <a href="verify.html">Verify</a>
+          <a href="whitepaper.html">Whitepaper</a>
+          <a href="developers.html">Developers</a>
+          <a href="federal.html">Federal</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="container">
+      <h1 class="h1">Verifiable Financial Documents</h1>
+      <p class="lede">
+        DOC.USD converts invoices, receipts, and financial records into cryptographically verifiable instruments
+        that can be audited independently. Content is addressed by hash, stored on IPFS, and resolvable through
+        public registry mappings and on-chain anchors.
+      </p>
+
+      <div class="btnrow">
+        <a class="btn" href="whitepaper.html">Read the Whitepaper</a>
+        <a class="btn secondary" href="registry.html">View Public Registry</a>
+        <a class="btn secondary" href="verify.html">Verify a CID</a>
+      </div>
+
+      <div class="pills">
+        <div class="pill">Tamper-evident</div>
+        <div class="pill">Content-addressed</div>
+        <div class="pill">Reproducible builds</div>
+        <div class="pill">IPFS + On-chain</div>
+        <div class="pill">TransitCloud powered</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <h2 class="h2">What DOC.USD Solves</h2>
+      <div class="grid">
+        <div class="card third">
+          <div class="kv">
+            <div class="k">Problem</div>
+            <div class="v">Financial documents are files that require trust, not instruments that can be verified.</div>
+          </div>
+        </div>
+        <div class="card third">
+          <div class="kv">
+            <div class="k">Impact</div>
+            <div class="v">Fraud, waste, and audit delays increase when records cannot be validated independently.</div>
+          </div>
+        </div>
+        <div class="card third">
+          <div class="kv">
+            <div class="k">Fix</div>
+            <div class="v">DOC.USD makes records verifiable by default through deterministic hashing and public resolution.</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="sep">
+
+      <h2 class="h2">How It Works</h2>
+      <div class="card">
+        <div class="code">DOC.USD → INSTABYTE → INSTA-FICHE → IPFS → Public Registry → On-Chain Anchor</div>
+        <p class="small">
+          Every artifact can be reproduced, hashed, and verified against its public pointers.
+          The registry binds human-readable names to immutable content IDs (CIDs), with optional pointer files and SHA-256 digests.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      Author of Record: Kam Swygert • Powered by TransitCloud • All records are cryptographically verifiable and reproducible.
+    </div>
+  </div>
+</body>
+</html>
